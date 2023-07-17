@@ -1,0 +1,100 @@
+{% load static %}
+
+{% block css %}
+<style>
+  .navbar{
+    font-size: 18px !important;
+    background-color: #fff !important;
+  }
+  .regi-log-btn .btn{
+    text-transform: capitalize;
+    line-height: 40px !important;
+    padding: 0 25px !important;
+    margin-left: 20px;
+    font-size: 18px !important;
+  }
+  .navbar-brand img{
+    height: 60px;
+  }
+</style>
+{% endblock css %}
+
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="{% static 'image/bbms-logo.png' %}" alt="BBMS">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Free Blood Collect</a></li>
+            <li><a class="dropdown-item" href="#">Free Blood Donate</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Free Blood Test</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Feedback</a>
+        </li>
+      </ul>
+      <span class="d-flex regi-log-btn">
+       <a href="{% url 'registration' %}" class="btn btn-primary">Registration</a>
+       <a href="/login/" class="btn btn-info">Login</a>
+      </span>
+    </div>
+  </div>
+</nav>
+{% endblock content %}
+
+
+
+{% comment %}
+<div class="bs-example">
+  <nav style="background-color: #c32d22;" class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a href="/" class="navbar-brand"><i class="fas fa-heartbeat"></i>&nbsp; Blood Bank Management System</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/"><i class="fas fa-home"></i>&nbsp; Home</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/patient/patientlogin"><i
+                class="fas fa-procedures"></i>&nbsp; Patient</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/donor/donorlogin"><i class="fas fa-user"></i>&nbsp;
+              Donor</i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/adminlogin"><i class="fas fa-user-shield"></i>&nbsp;
+              Admin</i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+{% endcomment %}
+  

@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+{% endblock css %}
+
+
+{% block content %}
+<section id="signup">
+    <div class="container">
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 shadow p-4">
+                <div class="form-head">
+                    <h3>Registration Form</h3>
+                    <hr class="col-1 lh-2 mt-2" />
+                    <ul class="nav justify-content-center nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link btn-secondary active" aria-current="page" data-bs-toggle="pill"
+                                href="#patientForm">Patient</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-secondary" data-bs-toggle="pill" href="#donerForm">Donor</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-body mt-5">
+                    <div class="tab-content">
+                        <form action="{% url 'patient_signup' %}" id="patientForm" method="post" enctype="multipart/form-data"
+                            class="row g-3 tab-pane fade show active">
+                            {% csrf_token %}
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_first_name" class="form-label">First name</label>
+                                    <input type="text" id="id_first_name" name="first_name" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_last_name" class="form-label">Last name</label>
+                                    <input type="text" id="id_last_name" name="last_name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_username" class="form-label">Username</label>
+                                    <input type="text" id="id_username" name="username" class="form-control" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_password" class="form-label">Password</label>
+                                    <input type="password" id="id_password" name="password" class="form-control"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-3">
+                                    <label for="id_city" class="form-label">Age</label>
+                                    <input type="number" id="id_city" name="age" class="form-control" required>
+                                </div>
+                                <div class="col-4">
+                                    <label for="id_blood_group" class="form-label">Blood Group</label>
+                                    <select name="bloodgroup" id="id_blood_group" class="form-select" required>
+                                        <option disabled selected>Please Select</option>
+                                        <option>O+</option>
+                                        <option>O-</option>
+                                        <option>A+</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B-</option>
+                                        <option>AB+</option>
+                                        <option>AB-</option>
+                                    </select>
+                                </div>
+                                <div class="col-5">
+                                    <label for="id_disease" class="form-label">Disease</label>
+                                    <input type="text" id="id_disease" name="disease" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_doctor_name" class="form-label">Doctor name</label>
+                                    <input type="text" id="id_doctor_name" name="doctorname" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_mobile" class="form-label">Mobile</label>
+                                    <input type="text" id="id_mobile" name="mobile" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_address" class="form-label">Address</label>
+                                    <input type="text" id="id_address" name="address" class="form-control" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_profile_photo" class="form-label">Profile Photo</label>
+                                    <input type="file" id="id_profile_photo" name="profile_pic" class="form-control"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 col-6 mx-auto py-3">
+                                <button class="btn btn-primary" type="submit">Sign Up</button>
+                            </div>
+                            <p class="text-center">If you already have an account?<a href="/login/"
+                                    class="text-decoration-none mx-1">Login</a>now.</p>
+                        </form>
+                        <form action="{% url 'doner_signup' %}" id="donerForm" method="post" enctype="multipart/form-data"
+                            class="row g-3 tab-pane fade">
+                            {% csrf_token %}
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_first_name" class="form-label">First name</label>
+                                    <input type="text" id="id_first_name" name="first_name" class="form-control" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_last_name" class="form-label">Last name</label>
+                                    <input type="text" id="id_last_name" name="last_name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_username" class="form-label">Username</label>
+                                    <input type="text" id="id_username" name="username" class="form-control input--style-5"
+                                        required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_password" class="form-label">Password</label>
+                                    <input type="password" id="id_password" name="password"
+                                        class="form-control input--style-5" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_blood_group" class="form-label">Blood Group</label>
+                                    <select name="bloodgroup" id="id_blood_group" class="form-select" required>
+                                        <option selected>Select Blood Group</option>
+                                        <option>O+</option>
+                                        <option>O-</option>
+                                        <option>A+</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B-</option>
+                                        <option>AB+</option>
+                                        <option>AB-</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_address" class="form-label">Address</label>
+                                    <input type="text" id="id_address" name="address" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label for="id_mobile" class="form-label">Mobile</label>
+                                    <input type="number" id="id_mobile" name="mobile" class="form-control" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="id_profile_photo" class="form-label">Profile Photo</label>
+                                    <input type="file" id="id_profile_photo" name="profile_pic" class="form-control"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 col-6 mx-auto py-3">
+                                <button class="btn btn-primary" type="submit">Sign Up</button>
+                            </div>
+                            <p class="text-center">If you already have an account? <a href="/login/"
+                                    class="text-decoration-none mx-1">Login</a>now.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

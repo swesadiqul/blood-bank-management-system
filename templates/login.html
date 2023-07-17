@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+{% endblock css %}
+
+
+{% block content %}
+<section id="login">
+    <div class="container">
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-6 col-md-6 col-sm-12 shadow p-4">
+                <div class="form-head">
+                    <h3>Login Form</h3>
+                    <hr class="col-1 lh-2 mt-2" />
+                </div>
+                <div class="form-body mt-5">
+                    <div class="tab-content">
+                        <form action="/login/" method="post" enctype="multipart/form-data"
+                            class="row g-3">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <label for="id_username" class="form-label">Username</label>
+                                    <input type="text" id="id_username" name="username" class="form-control" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="id_password" class="form-label">Password</label>
+                                    <input type="password" id="id_password" name="password" class="form-control"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 col-6 mx-auto py-3">
+                                <button class="btn btn-primary" type="submit">Log In</button>
+                            </div>
+                            <p class="text-center">If you don't have an account?<a href="/registration/"
+                                    class="text-decoration-none mx-1">Registration</a>now.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

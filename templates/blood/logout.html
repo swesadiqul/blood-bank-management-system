@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block css %}
+<style>
+  #logout{
+    padding-bottom: 70px;
+  }
+  .logo{
+    height: 100px;
+    width: 100px;
+  }
+</style>
+{% endblock css %}
+  
+
+
+{% block content %}
+<section id="logout" class="section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="text-center">
+          <img src="{% static 'image/logout.png' %}" alt="logo" class="logo">
+        </div>
+        <div class="card mt-4">
+          <div class="card-body text-center">
+            <i class="fa fa-sign-out fa-5x logout-icon"></i>
+            <h1 class="font-semibold mt-4">You have been logged out.</h1>
+            <form class="mt-4">
+              <div class="form-group">
+                <h6 class="text-center">Thank you for using the Blood Bank Management System</h6>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
+  

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+
+{% block css %}
+  
+{% endblock css %}
+    
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title text-center">Patient Registration</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data" autocomplete="off">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">First Name</label>
+                            {% render_field userForm.first_name|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            {% render_field userForm.last_name|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            {% render_field userForm.username|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            {% render_field userForm.password|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="age" class="form-label">Age</label>
+                            {% render_field patientForm.age|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="bloodgroup" class="form-label">Blood Group</label>
+                            <div class="input-group">
+                                <select name="bloodgroup" class="form-select">
+                                    <option disabled="disabled" selected="selected">Please Select</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="disease" class="form-label">Disease</label>
+                            {% render_field patientForm.disease|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="doctorname" class="form-label">Doctor's Name</label>
+                            {% render_field patientForm.doctorname|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            {% render_field patientForm.address|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mobile" class="form-label">Contact No.</label>
+                            {% render_field patientForm.mobile|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="profile_pic" class="form-label">Photo</label>
+                            {% render_field patientForm.profile_pic|attr:'required:true' class="form-control" %}
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-danger btn-block" type="submit">Register</button>
+                        </div>
+                    </form>
+                    <br>
+                    <p class="text-center">Already have an account? <a href="/patient/patientlogin" class="text-decoration-none">Login To Continue</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+    
+

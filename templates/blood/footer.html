@@ -1,0 +1,70 @@
+{% load static %}
+
+{% block css %}
+<style>
+  #footer img{
+    height: 70px !important;
+  }
+  .follow a{
+    text-decoration: none;
+    color:darkslategrey;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+</style>
+{% endblock css %}
+  
+
+
+{% block content %}
+<div id="footer" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <img src="{% static 'image/bbms-logo.png' %}" alt="BBMS">
+        <p class="ms-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, fugiat blanditiis quae voluptas delectus libero unde quam perferendis tempora! Quod pariatur corporis nesciunt ea commodi.</p>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-12">
+        <h3>Our Offices</h3>
+        <p><strong>Dhaka:</strong><a href="https://goo.gl/maps/CVUPnt2KQQDwH9R3A" target="_blank" rel="noopener noreferrer">
+          A-Block BSMMU, Shahbagh Rd, Dhaka
+        </a></p>
+        <p><strong>Rangpur:</strong><a href="https://goo.gl/maps/CVUPnt2KQQDwH9R3A" target="_blank" rel="noopener noreferrer">
+          A-Block BSMMU, Shahbagh Rd, Dhaka
+        </a></p>
+        <p><strong>Bogura:</strong><a href="https://goo.gl/maps/CVUPnt2KQQDwH9R3A" target="_blank" rel="noopener noreferrer">
+          A-Block BSMMU, Shahbagh Rd, Dhaka
+        </a></p>
+        <p><strong>Chittagong:</strong><a href="https://goo.gl/maps/CVUPnt2KQQDwH9R3A" target="_blank" rel="noopener noreferrer">
+          A-Block BSMMU, Shahbagh Rd, Dhaka
+        </a></p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <h3 class="mb-3">Get In Touch</h3>
+        <div class="follow my-3">
+          <a href="http://" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="http://" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="http://" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="http://" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+        <div class="form-group">
+          <form action="" method="post">
+            <input type="email" class="form-control" id="email" placeholder="E-mail address">
+            <button type="submit" class="btn btn-primary mt-4">Subscribe</button>
+        </form>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-5 pb-2">Copyright&copy;{% now 'Y' %}, Blood Bank Management System. All Right Reserved. Developed By swesadiqul.</p>
+  </div>
+</div>
+{% endblock content %}
+  
